@@ -38,3 +38,43 @@ This project blends **data analysis**, **visual storytelling**, and **business i
 | **Presentation** | Power BI / Markdown / PDF Report | Business-ready visuals |
 
 ### Repository Layout
+
+
+---
+
+## 📊 Datasets
+| File | Description | Source |
+|------|--------------|--------|
+| `box_office_2000_2024.csv` | Worldwide film revenues | [Kaggle dataset](https://www.kaggle.com/datasets/parthdande/movies-box-office-collection-data-2000-2024) |
+| `ticket_prices_uk.csv` / `ticket_prices_us.csv` | Historical ticket prices 1996-2024 | Comscore / The Numbers |
+| `indie_roi_table.csv` | Lockdown-era indie film budgets & grosses | Compiled public sources |
+| `trailer_views_24hr.csv` | Film vs Game trailer view counts | Official studio / press releases |
+| `mirage.db` | SQLite DB built from all above CSV files | Generated locally |
+
+Run the builder once:
+```bash
+python scripts/build_sqlite_db.py
+
+
+
+# Create environment
+conda env create -f environment.yml
+conda activate mirage
+
+# Launch analysis
+jupyter notebook scripts/00_index.ipynb
+
+
+-- Franchise share of global revenue
+SELECT franchise, SUM(revenue_worldwide) AS total_rev, COUNT(*) AS films
+FROM top100
+GROUP BY franchise
+ORDER BY total_rev DESC;
+
+
+from scripts.plot_style import apply_style
+with apply_style('dark'):
+    ...
+
+
+
