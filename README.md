@@ -1,80 +1,46 @@
-# 🎬 The Billion-Dollar Mirage  
-**A Data Storytelling Project by Julian Hinds (2025)**  
-*Exploring how global events, streaming, and franchise economics reshaped the modern film industry.*
+# The Billion-Dollar Myth
+**A behavioural, incentives-first analysis of how “success” in film and TV shifted from box office dominance to ecosystem leverage.**
 
----
+## What this is
+This project began with a traditional assumption: **cinema box office = success**.  
+Act I dismantles that assumption using long-horizon patterns (the “frog in the pot” behavioural shift).  
+Act II reframes the industry through **consumer behaviour, ritual formation, cultural gravity, and ecosystem economics** — not deal-specific speculation.
 
-## 🧭 Overview
-Between 2000 and 2025 cinema reached record highs, collapsed during COVID-19, and re-emerged into a radically different world.  
-This project blends **data analysis**, **visual storytelling**, and **business insight** to explain how billion-dollar blockbusters made Hollywood both stronger — and more fragile.
+**This is a case-study-style analysis, not a prediction.**  
+It uses public information and cautious inference. No certainty theatre.
 
----
+## Why it exists (career context)
+This project is also a portfolio artefact for roles such as:
+- Prompt Architect / Prompt Engineer (title varies)
+- Decision Intelligence / Strategic Insights
+- Data Storytelling / Analytics Translator
+- Behavioural Insights (media/consumer)
 
-## 🎯 Objectives
-- Quantify the rise and decline of global box office revenue.  
-- Examine how streaming and pandemic behaviour changed audience habits.  
-- Compare ticket price inflation vs real attendance.  
-- Explore how independent films thrived under constraint.  
-- Show how the gaming industry and attention economy reshaped entertainment.
+It demonstrates:
+- systems thinking + second/third-order effects
+- traits vs states reasoning (structural vs temporary dynamics)
+- credibility-first inference (strong vs speculative)
+- visual communication (Power BI + Python-generated charts)
 
----
+## Contents
+- **Slides**: `/slides`
+- **Prompt / AI workflow notes**: `/prompts`
+- **Methodology + limitations**: `/method`
+- **Sources**: `/data/sources.md`
+- **Charts (Python exports for Power BI)**: `/charts`
 
-## 🧩 Key Insights
-1. **The COVID Cliff** – Global box office fell ≈ 80 % in 2020 and has not fully recovered.  
-2. **Franchise Fragility** – MCU-era profits masked structural risk; post-2019 returns halved.  
-3. **The Disney+ Effect** – Streaming turned studios into their own competitors.  
-4. **Price ≠ Attendance** – Ticket prices more than doubled since 1996 while ticket sales fell ≈ 40 %.  
-5. **Creativity in Constraint** – Micro-budget indies hit record ROI during lockdowns.  
-6. **The Attention War** – AAA games (GTA VI, LoL) now out-perform films in 24-hour view counts and cultural pull.
+## Method (high-level)
+- Prioritise **revealed behaviour** over stated intent.
+- Separate **measurement** (what is counted) from **meaning** (what it implies).
+- Distinguish **traits** (stable incentives) from **states** (temporary conditions).
+- Mark inference strength:
+  - **Strong**: consistent with multi-year behavioural trends
+  - **Speculative**: plausible but not confirmable with current public data
 
----
+## Tools used
+- Power BI Desktop (dashboard + slide visuals)
+- Python (matplotlib charts exported to transparent PNGs)
+- LLMs (idea stress-testing, counter-arguments, clarity-first prompting)
 
-## 🧮 Tech Stack & Structure
-| Layer | Tools / Languages | Purpose |
-|-------|-------------------|----------|
-| **Data** | CSV → SQLite (`mirage.db`) | Easy, reproducible storage |
-| **Analysis** | Python 3.11 • Pandas • Matplotlib • NumPy | Cleaning & visualisation |
-| **Query** | SQL ( SQLite / DuckDB ) | Aggregations & joins |
-| **Presentation** | Power BI / Markdown / PDF Report | Business-ready visuals |
-
-### Repository Layout
-
-
----
-
-## 📊 Datasets
-| File | Description | Source |
-|------|--------------|--------|
-| `box_office_2000_2024.csv` | Worldwide film revenues | [Kaggle dataset](https://www.kaggle.com/datasets/parthdande/movies-box-office-collection-data-2000-2024) |
-| `ticket_prices_uk.csv` / `ticket_prices_us.csv` | Historical ticket prices 1996-2024 | Comscore / The Numbers |
-| `indie_roi_table.csv` | Lockdown-era indie film budgets & grosses | Compiled public sources |
-| `trailer_views_24hr.csv` | Film vs Game trailer view counts | Official studio / press releases |
-| `mirage.db` | SQLite DB built from all above CSV files | Generated locally |
-
-Run the builder once:
-```bash
-python scripts/build_sqlite_db.py
-
-
-
-# Create environment
-conda env create -f environment.yml
-conda activate mirage
-
-# Launch analysis
-jupyter notebook scripts/00_index.ipynb
-
-
--- Franchise share of global revenue
-SELECT franchise, SUM(revenue_worldwide) AS total_rev, COUNT(*) AS films
-FROM top100
-GROUP BY franchise
-ORDER BY total_rev DESC;
-
-
-from scripts.plot_style import apply_style
-with apply_style('dark'):
-    ...
-
-
-
+## Key disclaimer
+This project is for analytical/portfolio purposes and does not represent insider information.
