@@ -37,7 +37,7 @@ Although the entertainment industry provides the case study, the project is fund
 
 ## Read the paper
 
-📄 **The Billion-Dollar Myth — Director's Cut.pdf**
+📄 [The Billion-Dollar Myth — Director's Cut](The%20Billion-Dollar-Myth%20-%20Directors%20Cut%20v2.pdf)
 
 ---
 
